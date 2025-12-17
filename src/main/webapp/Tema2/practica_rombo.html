@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Rombo</title>
+</head>
+<body>
+    <div id="caja"></div>
+
+    <script>
+        // Referencia al div donde se va a mostrar el rombo
+        const caja = document.getElementById("caja");
+        const limite = 4; // Límite para la parte creciente del rombo
+
+        // Parte creciente
+        for (let i = 0; i < limite; i++) {
+            let asterisco = ""; // Almacena los asteriscos de cada línea
+            let espacioHTML = ""; // Almacena los espacios de cada línea
+
+            // Añadir espacios HTML
+            for (let k = 0; k < limite - i - 1; k++) {
+                espacioHTML += "&nbsp&nbsp"; // Se añaden los espacios necesarios
+            }
+
+            // Añadir asteriscos
+            for (let j = 1; j <= 2 * i + 1; j++) {
+                asterisco += "*"; // Se añaden los asteriscos correspondientes
+            }
+
+            // Imprimir la línea en el div
+            caja.innerHTML += espacioHTML + asterisco + "<br>";
+        }
+
+        // Parte decreciente
+        for (let i = limite - 2; i >= 0; i--) {
+            let asterisco = ""; // Almacena los asteriscos de cada línea
+            let espacioHTML = ""; // Almacena los espacios de cada línea
+
+            // Añadir espacios HTML
+            for (let k = 0; k < limite - i - 1; k++) {
+                espacioHTML += "&nbsp&nbsp"; // Se añaden los espacios necesarios
+            }
+
+            // Añadir asteriscos
+            for (let j = 1; j <= 2 * i + 1; j++) {
+                asterisco += "*"; // Se añaden los asteriscos correspondientes
+            }
+
+            // Imprimir la línea en el div
+            caja.innerHTML += espacioHTML + asterisco + "<br>";
+        }
+    </script>
+</body>
+</html>
